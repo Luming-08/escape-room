@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Escape Room</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="js/game.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/escaped.css" />
+    <script defer src="js/game.js"></script>
   </head>
   <body>
     <audio autoplay>
-        <source src="audio/yippee.mp3">
+      <source src="audio/yippee.mp3" />
     </audio>
 
-    <div style="display: flex; height: 550px; flex-direction: column; justify-content: center; align-items: center;">
-        <h1 class="fadeInUp-animation" style="margin: 0;">Congrats!</h1>
-        <p class="fadeInUp-animation" style="margin: 0; font-size: 50px;">
-            You escaped with <span id="timeLeftDisplay"></span> remaining!
-        </p>
-        <a href="index.html">
-            <button class="fadeInUp-animation" style="font-size: 16px;">Play again</button>
-        </a>
-    </div>
-    
+    <main class="escape-card">
+      <p class="eyebrow fadeInUp-animation">Challenge Complete</p>
+      <h1 class="fadeInUp-animation">Congrats!</h1>
+      <p class="message fadeInUp-animation">
+        You escaped with <span class="time" id="timeLeftDisplay"></span> remaining.
+      </p>
+      <div class="actions fadeInUp-animation">
+        <a class="play-again" href="index.html">Play Again</a>
+      </div>
+    </main>
+
     <script>
-        const timeLeft = Number(localStorage.getItem("timeLeft"));
+      const timeLeft = Number(localStorage.getItem("timeLeft")) || 0;
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
 
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
-
-        document.getElementById("timeLeftDisplay").innerText =
-            `${minutes}:${seconds.toString().padStart(2, "0")}`;
+      document.getElementById("timeLeftDisplay").innerText =
+        `${minutes}:${seconds.toString().padStart(2, "0")}`;
     </script>
   </body>
 </html>

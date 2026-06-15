@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Escape Room</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="js/game.js"></script>
-  </head>
-  <body>
-    <div id="home" style="display: flex; height: 550px; justify-content: center; align-items: center; flex-direction: column;">
-      <h1 style="text-align: center; font-size: 60px; margin: 0;">Escape Room</h1>
-      <button style="font-size: 20px;" onclick="showInstructions()">Play</button>
-    </div>
-    <div id="instructions" class="overlay hidden">
-    <div>
-      <h1>How to Play</h1>
-      <p class="tutorialText">
-        You are stuck in a classroom. Your goal is to escape.<br>
-        To do so, you must solve a series of puzzles.<br>
-        You can click objects, and move to different sides of the room by clicking the arrows on the page.<br>
-        All the clues you need will be in the room.<br>
-        The first puzzle with the safe applies to only objects in the first page.<br>
-        You may need to think outside the box :]<br>
-        Good luck. You have 30 minutes to escape...
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape Room</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <script defer src="js/game.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" id="home">
+      <span class="eyebrow">30-minute challenge</span>
+      <h1>Escape Room</h1>
+      <p class="subtitle">
+        You are stuck in a classroom. Your goal is to escape. To do so, you must solve a series of puzzles before the time runs out.
       </p>
-      <a href="room.html">
-        <button style="font-size: 20px;">Start</button>
-      </a>
+      <div class="hero-actions">
+        <button class="cta" onclick="showInstructions()">Play Now</button>
+      </div>
+    </section>
+  </main>
+
+  <section id="instructions" class="overlay hidden" aria-modal="true" role="dialog" aria-labelledby="instructions-title">
+    <div class="modal">
+      <h2 id="instructions-title">How to Play</h2>
+      <p class="tutorialText">
+        Explore carefully.<br>
+        You may need to think outside the box 😊
+      </p>
+
+      <ol class="instruction-list">
+	    <li>The safe puzzle depends only on clues from the first room view.</li>
+        <li>Click around the room to inspect items and uncover clues.</li>
+        <li>Use the arrows to switch views and check different sides of the classroom.</li>
+        <li>You have 30 minutes to escape.</li>
+      </ol>
+
+      <div class="modal-actions">
+        <a class="btn-primary" href="room.html">Start Game</a>
+      </div>
     </div>
-  </div>
-  </body>
+  </section>
+</body>
 </html>

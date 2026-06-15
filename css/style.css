@@ -192,30 +192,30 @@ button {
 
 #textOverlay {
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translateX(-45%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 70px;
-}
-
-#textOverlay button {
-  position: relative;
-  font-size: 16px;
-  cursor: pointer;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
 }
 
 #codeInput {
   text-transform: uppercase;
-  padding: 8px;
-  font-size: 100px;
-  width: 570px;
-  letter-spacing: 115px;
+  padding: 0;
+  font-size: clamp(48px, 9vw, 100px);
+  width: min(92vw, 620px);
+  letter-spacing: clamp(18px, 6vw, 92px);
+  text-align: center;
   background: transparent;
   border: none;
   outline: none;
+}
+
+#textOverlay .check-btn {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(20px, 4vh, 40px);
+  transform: translateX(-50%);
+  z-index: 31;
 }
 
 /*fade out and in animations*/
@@ -237,4 +237,37 @@ button {
 
 .fadeInUp-animation {
   animation: 1.5s fadeInUp;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 28px;
+  min-height: 50px;
+  border: none;
+  border-radius: 999px;
+  background: #b38b4d;
+  color: #16120b;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(179, 139, 77, 0.28);
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.cta:hover {
+  background: #c79a54;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(179, 139, 77, 0.34);
+}
+
+.check-btn {
+  position: relative;
+}
+
+.try-again-link {
+  text-decoration: none;
 }
