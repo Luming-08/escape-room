@@ -10,85 +10,84 @@
       <source src="audio/music.mp3">
       Your browser does not support the audio element.
     </audio>
+
     <div style="display: flex; height: 50px; justify-content: space-evenly; align-items: center;" class="topbar">
-        <a href="home.html">Restart Game</a>
-        <p class="topText">Time Left: <span id="counter">30:00</span></p>
-        <p class="topText">Audio
-          <button id="muteBtn" onclick="toggleMute()">🔊</button>
-        </p>
+      <a href="index.html">Restart Game</a>
+      <p class="topText">Time Left: <span id="counter">30:00</span></p>
+      <p class="topText">Audio
+        <button id="muteBtn" onclick="toggleMute()">🔊</button>
+      </p>
     </div>
 
     <div id="room">
       <button style="font-size: 30px;" id="leftButton" onclick="changeBackground(1)">⇦</button>
       <button style="font-size: 30px;" id="rightButton" onclick="changeBackground(-1)">⇨</button>
-      
-      <div class="clickable" id="safeSpot" onclick="openObject('images/safe.jpeg')"></div>
+
+      <div class="clickable" id="safeSpot" onclick="openObject('images/safe.PNG')"></div>
       <div class="clickable" id="folderSpot" onclick="openObject('images/folder.PNG')"></div>
       <div class="clickable" id="codeSpot" onclick="openObject('images/code.PNG')"></div>
 
       <div id="objectView" class="overlay hidden">
-        <img id="objectImage">
-        <button onclick="closeObject()">X</button>
+        <div id="safeContainer">
+          <img id="objectImage" src="images/safe.jpg" alt="Safe">
+          <button id="closeBtn" onclick="closeObject()">X</button>
+
           <div id="keys">
-            <button class="key" data-num="1" style="left:33%; top:34.5%" onclick="press(this)"></button>
-            <button class="key" data-num="2" style="left:37%; top:34.5%" onclick="press(this)"></button>
-            <button class="key" data-num="3" style="left:41%; top:34.5%" onclick="press(this)"></button>
-            <button class="key" data-num="4" style="left:45%; top:34.5%" onclick="press(this)"></button>
+            <button class="key key1" data-num="1" onclick="press(this)"></button>
+            <button class="key key2" data-num="2" onclick="press(this)"></button>
+            <button class="key key3" data-num="3" onclick="press(this)"></button>
+            <button class="key key4" data-num="4" onclick="press(this)"></button>
 
-            <button class="key" data-num="5" style="left:33%; top:45%" onclick="press(this)"></button>
-            <button class="key" data-num="6" style="left:37%; top:45%" onclick="press(this)"></button>
-            <button class="key" data-num="7" style="left:41%; top:45%" onclick="press(this)"></button>
-            <button class="key" data-num="8" style="left:45%; top:45%" onclick="press(this)"></button>
+            <button class="key key5" data-num="5" onclick="press(this)"></button>
+            <button class="key key6" data-num="6" onclick="press(this)"></button>
+            <button class="key key7" data-num="7" onclick="press(this)"></button>
+            <button class="key key8" data-num="8" onclick="press(this)"></button>
 
-            <button class="key" data-num="9" style="left:37%; top:55%" onclick="press(this)"></button>
-            <button class="key" data-num="0" style="left:41%; top:55%" onclick="press(this)"></button>
-            <button class="key" style="left:45%; top:55%" onclick="checkCode()"></button>
+            <button class="key key9" data-num="9" onclick="press(this)"></button>
+            <button class="key key0" data-num="0" onclick="press(this)"></button>
+            <button class="key keyEnter" onclick="checkCode()"></button>
           </div>
-          <div id="keypad">
-            <h3>Code:</h3>
-            <div id="typed">----</div>
-          </div>
+        </div>
 
-          <div id="textOverlay" class="hidden">
-            <input type="text" maxlength="3" id="codeInput">
-            <button style="right: 10%" onclick="checkTextCode()">Check</button>
-          </div>
+        <div id="keypad">
+          <h3>Code:</h3>
+          <div id="typed">----</div>
+        </div>
+
+        <div id="textOverlay" class="hidden">
+          <input type="text" maxlength="3" id="codeInput">
+          <button style="right: 10%" onclick="checkTextCode()">Check</button>
+        </div>
       </div>
     </div>
 
+    <!--SPOILER ALERT: ANSWERS BELOW‼️-->
+
+    <!--safe code: 1333
+    clover = 1, look at the card. there is one clover/it's an ace
+    P__ = 3, look at the schedule. P3 is missing
+    __:00 = 3, look at the time. it's 3:00
+    book = 3, look at the shelf on the left. there are 3 books
+    -->
+
+    <!--letter code/code to exit: dub or DUB
+    the clues that you get when you open the safe are books, cloud, and something on a piece of paper.
+
+    letter 1: d
+    when you go to the background where you can enter the exit code, you will see morse code letters
+    the book clue corresponds with the background with the book shelf. the books look similar to the stacked books on the starting page.
+    on the page with the bookshelf, there are only 3 books that allign with the books on the first page. and they have a dash, dot, and dot
+    based on that clue, you can go back to the page with the morse code and find that that corresponds to the letter d
+
+    letter 2: u
+    the second clue is a cloud. you can go to the page with the windows and you see 3 clouds
+    once again they correspond to morse code with 2 smaller clouds that look like a circle and a longer cloud
+    that corresponds to the letter u
+
+    letter 3: b
+    the third clue is back on the first page as you see a piece of paper with a push pin on top. something like that only shows up on the first page
+    it's the piece of paper with dots and a line. on the bottom, there is a very tiny arrow pointing up, meaning you read from down to up
+    so you read dash, dot, dot, dot which corresponds to the letter b
+    -->
   </body>
 </html>
-
-
-<!--SPOILER ALERT: ANSWERS BELOW‼️-->
-
-
-
-
-
-<!--safe code: 1333
-clover = 1, look at the card. there is one clover/it's an ace
-P__ = 3, look at the schedule. P3 is missing
-__:00 = 3, look at the time. it's 3:00
-book = 3, look at the shelf on the left. there are 3 books
--->
-
-<!--letter code/code to exit: dub or DUB
-the clues that you get when you open the safe are books, cloud, and something on a piece of paper.
-
-letter 1: d
-when you go to the background where you can enter the exit code, you will see morse code letters
-the book clue corresponds with the background with the book shelf. the books look similar to the stacked books on the starting page.
-on the page with the bookshelf, there are only 3 books that allign with the books on the first page. and they have a dash, dot, and dot
-based on that clue, you can go back to the page with the morse code and find that that corresponds to the letter d
-
-letter 2: u
-the second clue is a cloud. you can go to the page with the windows and you see 3 clouds
-once again they correspond to morse code with 2 smaller clouds that look like a circle and a longer cloud
-that corresponds to the letter u
-
-letter 3: b
-the third clue is back on the first page as you see a piece of paper with a push pin on top. something like that only shows up on the first page
-it's the piece of paper with dots and a line. on the bottom, there is a very tiny arrow pointing up, meaning you read from down to up
-so you read dash, dot, dot, dot which corresponds to the letter b
--->
