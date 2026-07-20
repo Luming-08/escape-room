@@ -1,10 +1,10 @@
-# Escape Room Game
+Escape Room Game
 
 A browser-based escape room game built with HTML, CSS, and JavaScript.
-It includes puzzles the player has to solve to escape the room.
+It includes puzzles that the player has to solve to escape the room.
 All images are hand drawn by me.
 
-## Features
+Features
 
 - Built with pure HTML, CSS, and JavaScript
 - Play directly in the browser
